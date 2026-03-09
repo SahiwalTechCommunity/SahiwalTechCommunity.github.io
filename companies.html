@@ -17,9 +17,7 @@
   <link rel="stylesheet preload" href="assets/css/style.css" as="style">
   <link rel="stylesheet preload" href="assets/css/stc-style.css" as="style">
   <link rel="stylesheet preload" href="assets/css/stc-responsive.css" as="style">
-
-  <!-- Leaflet CSS for Map -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet preload" href="assets/css/stc-enhanced.css" as="style">
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/Sahiwal-Tech-Community-logo.png">
@@ -120,11 +118,11 @@
       <div class="stc__page-hero-content">
         <div class="stc__hero-badges">
           <span class="stc__hero-badge stc__badge-pulse">
-            <i class="fa-solid fa-circle text-gold-light" style="font-size: 8px;"></i>
+            <i class="fa-solid fa-circle text-gold-light" style="font-size: 8px;" aria-hidden="true"></i>
             Verified Directory
           </span>
           <span class="stc__hero-badge">
-            <i class="fa-solid fa-building"></i>
+            <i class="fa-solid fa-building" aria-hidden="true"></i>
             50+ IT Companies
           </span>
         </div>
@@ -134,12 +132,12 @@
           Discover Sahiwal's premier tech organizations. From established software houses
           to rising startups, explore the heartbeat of our local tech industry.
         </p>
-        <div class="stc__hero-cta">
+        <div class="stc__hero-cta" style="padding-top:30px;">
           <a href="#stc-companies-map" class="stc__btn stc__btn-primary stc__btn-glow">
-            <i class="fa-solid fa-map-location-dot"></i> Explore Map
+            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Explore Map
           </a>
           <a href="#directory" class="stc__btn stc__btn-outline stc__btn-outline-light">
-            <i class="fa-solid fa-list"></i> View Directory
+            <i class="fa-solid fa-list" aria-hidden="true"></i> View Directory
           </a>
         </div>
       </div>
@@ -179,21 +177,10 @@
         <p class="stc__title-description">Click on markers to view company details and contact information</p>
       </div>
       <div class="stc__map-wrapper stc__card">
-        <div id="stc-companies-map"></div>
-      </div>
-      <div class="stc__map-legend">
-        <div class="stc__legend-item">
-          <span class="stc__legend-marker stc__marker-verified"></span>
-          <span>Verified Company</span>
-        </div>
-        <div class="stc__legend-item">
-          <span class="stc__legend-marker stc__marker-startup"></span>
-          <span>Startup</span>
-        </div>
-        <div class="stc__legend-item">
-          <span class="stc__legend-marker stc__marker-corporate"></span>
-          <span>Corporate</span>
-        </div>
+        <iframe class="stc__map-iframe"
+          src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d124395.16767543204!2d73.0438042!3d30.6736484!3m2!1i1024!2i768!4f13.1!2m1!1sIt%20Companies%20in%20Sahiwal!5e1!3m2!1sen!2s!4v1773043971509!5m2!1sen!2s"
+          width="100%" height="450" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -222,7 +209,7 @@
         <!-- Company 1: Million Miles Technologies -->
         <div class="stc__company-card" data-category="software">
           <div class="stc__company-logo-box">
-            <i class="fa-solid fa-code"></i>
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
           </div>
           <div class="stc__company-badge stc__badge-software">Software House</div>
           <h3 class="stc__company-name">Million Miles Technologies</h3>
@@ -236,22 +223,22 @@
               <span>Sahiwal, Punjab</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
               <span>info@millionmiles.com</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-globe"></i>
+              <i class="fa-solid fa-globe" aria-hidden="true"></i>
               <span>www.millionmiles.com</span>
             </div>
             <div class="stc__info-item stc__info-hiring">
-              <i class="fa-solid fa-user-plus"></i>
+              <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
               <span><strong>5 Open Positions</strong></span>
             </div>
           </div>
           <div class="stc__company-actions">
             <div class="stc__company-social">
-              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -259,7 +246,7 @@
         <!-- Company 2: The Tech Axe -->
         <div class="stc__company-card" data-category="training">
           <div class="stc__company-logo-box">
-            <i class="fa-solid fa-graduation-cap"></i>
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
           </div>
           <div class="stc__company-badge stc__badge-training">Training Partner</div>
           <h3 class="stc__company-name">The Tech Axe</h3>
@@ -273,22 +260,22 @@
               <span>Sahiwal City Center</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
               <span>hello@thetechaxe.com</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-globe"></i>
+              <i class="fa-solid fa-globe" aria-hidden="true"></i>
               <span>www.thetechaxe.com</span>
             </div>
             <div class="stc__info-item stc__info-hiring">
-              <i class="fa-solid fa-graduation-cap"></i>
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
               <span><strong>Internships Available</strong></span>
             </div>
           </div>
           <div class="stc__company-actions">
             <div class="stc__company-social">
-              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -296,7 +283,7 @@
         <!-- Company 3: Wateen -->
         <div class="stc__company-card" data-category="telecom">
           <div class="stc__company-logo-box">
-            <i class="fa-solid fa-tower-broadcast"></i>
+            <i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i>
           </div>
           <div class="stc__company-badge stc__badge-telecom">Telecommunications</div>
           <h3 class="stc__company-name">Wateen</h3>
@@ -310,22 +297,22 @@
               <span>Sahiwal Regional Office</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
               <span>sahiwal@wateen.com</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-globe"></i>
+              <i class="fa-solid fa-globe" aria-hidden="true"></i>
               <span>www.wateen.com</span>
             </div>
             <div class="stc__info-item stc__info-hiring">
-              <i class="fa-solid fa-briefcase"></i>
+              <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
               <span><strong>IT Infrastructure Roles</strong></span>
             </div>
           </div>
           <div class="stc__company-actions">
             <div class="stc__company-social">
-              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -333,7 +320,7 @@
         <!-- Company 4: CodeCraft Studios -->
         <div class="stc__company-card" data-category="software">
           <div class="stc__company-logo-box">
-            <i class="fa-solid fa-laptop-code"></i>
+            <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
           </div>
           <div class="stc__company-badge stc__badge-software">Software House</div>
           <h3 class="stc__company-name">CodeCraft Studios</h3>
@@ -347,22 +334,22 @@
               <span>Sahiwal, Pakistan</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
               <span>contact@codecraft.com</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-globe"></i>
+              <i class="fa-solid fa-globe" aria-hidden="true"></i>
               <span>www.codecraft.com</span>
             </div>
             <div class="stc__info-item stc__info-hiring">
-              <i class="fa-solid fa-user-plus"></i>
+              <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
               <span><strong>2 Open Positions</strong></span>
             </div>
           </div>
           <div class="stc__company-actions">
             <div class="stc__company-social">
-              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -370,7 +357,7 @@
         <!-- Company 5: DesignHub -->
         <div class="stc__company-card" data-category="startups">
           <div class="stc__company-logo-box">
-            <i class="fa-solid fa-palette"></i>
+            <i class="fa-solid fa-palette" aria-hidden="true"></i>
           </div>
           <div class="stc__company-badge stc__badge-startups">Design Startup</div>
           <h3 class="stc__company-name">DesignHub</h3>
@@ -384,22 +371,22 @@
               <span>Sahiwal, Pakistan</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
               <span>design@designhub.com</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-globe"></i>
+              <i class="fa-solid fa-globe" aria-hidden="true"></i>
               <span>www.designhub.com</span>
             </div>
             <div class="stc__info-item stc__info-hiring">
-              <i class="fa-solid fa-pen-nib"></i>
+              <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
               <span><strong>Looking for Designers</strong></span>
             </div>
           </div>
           <div class="stc__company-actions">
             <div class="stc__company-social">
-              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -407,7 +394,7 @@
         <!-- Company 6: DataSync Solutions -->
         <div class="stc__company-card" data-category="services">
           <div class="stc__company-logo-box">
-            <i class="fa-solid fa-chart-line"></i>
+            <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
           </div>
           <div class="stc__company-badge stc__badge-services">IT Services</div>
           <h3 class="stc__company-name">DataSync Solutions</h3>
@@ -421,22 +408,22 @@
               <span>Sahiwal, Pakistan</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
               <span>info@datasync.com</span>
             </div>
             <div class="stc__info-item">
-              <i class="fa-solid fa-globe"></i>
+              <i class="fa-solid fa-globe" aria-hidden="true"></i>
               <span>www.datasync.com</span>
             </div>
             <div class="stc__info-item stc__info-hiring">
-              <i class="fa-solid fa-database"></i>
+              <i class="fa-solid fa-database" aria-hidden="true"></i>
               <span><strong>Data Science Roles</strong></span>
             </div>
           </div>
           <div class="stc__company-actions">
             <div class="stc__company-social">
-              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -446,24 +433,39 @@
   </section>
 
   <!-- Add Your Company CTA -->
-  <section class="stc__company-cta-section stc__section-dark">
+  <section class="stc__company-cta-section stc__section-dark"
+    style="background: linear-gradient(135deg, var(--stc-dark) 0%, var(--stc-green-primary) 100%);">
     <div class="stc__container">
-      <div class="stc__company-cta stc__card-glass">
-        <div class="stc__cta-icon">
-          <i class="fa-solid fa-building-circle-plus"></i>
+      <div class="stc__hero-wrapper">
+        <div class="stc__hero-content">
+          <h2 class="stc__hero-title">Own an IT Company in Sahiwal?</h2>
+          <p class="stc__hero-description">
+            List your company in our verified directory to connect with Sahiwal's top tech talent.
+            Help us build a stronger local ecosystem together.
+          </p>
         </div>
-        <h2 class="stc__company-cta-title">Own an IT Company in Sahiwal?</h2>
-        <p class="stc__company-cta-description">
-          List your company in our verified directory to connect with Sahiwal's top tech talent.
-          Help us build a stronger local ecosystem together.
-        </p>
-        <div class="stc__cta-btns">
-          <a href="contact.html" class="stc__btn stc__btn-primary stc__btn-glow">
-            <i class="fa-solid fa-plus"></i> Submit Your Company
-          </a>
-          <a href="https://chat.whatsapp.com/HS0ZesKSH9gB3lHulLQ1c7" class="stc__btn stc__btn-whatsapp" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> Join Admin Group
-          </a>
+
+        <div class="stc__hero-form">
+          <div class="stc__hero-form-card stc__card stc__card-glass">
+            <div class="stc__form-header-icon"
+              style="text-align:center; font-size:48px; color:var(--stc-green-primary); margin-bottom:20px;">
+              <i class="fa-solid fa-building-circle-plus" aria-hidden="true"></i>
+            </div>
+            <h3 class="stc__hero-form-title" style="color:var(--stc-text)">Get Listed Today</h3>
+            <p class="stc__hero-form-description" style="color:var(--stc-text-light)">Join the directory to showcase
+              your company</p>
+
+            <div class="stc__hero-form-alternative" style="display:flex; flex-direction:column; gap:16px;">
+              <a href="contact.html" class="stc__btn stc__btn-primary stc__btn-glow"
+                style="width:100%; justify-content:center;">
+                <i class="fa-solid fa-plus" aria-hidden="true"></i> Submit Your Company
+              </a>
+              <a href="https://chat.whatsapp.com/HS0ZesKSH9gB3lHulLQ1c7" class="stc__btn stc__btn-whatsapp"
+                target="_blank" style="width:100%; justify-content:center;">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Join Admin Group
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -570,133 +572,11 @@
   <script src="assets/js/wow.js"></script>
   <script src="assets/js/stc-main.js"></script>
 
-  <!-- Leaflet JS for Map -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <!-- Initialize Map -->
+  <!-- Company List Interactive Scripts -->
   <script>
     (function () {
       'use strict';
 
-      // Sahiwal coordinates
-      const sahiwalCoords = [30.6668, 73.0946];
-
-      // Initialize the map
-      const map = L.map('stc-companies-map').setView(sahiwalCoords, 14);
-
-      // Add OpenStreetMap tiles
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-
-      // Custom icons for different company types
-      const verifiedIcon = L.divIcon({
-        className: 'stc__map-marker stc__marker-verified',
-        html: '<div class="stc__marker-inner"><i class="fa-solid fa-building"></i></div>',
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        popupAnchor: [0, -40]
-      });
-
-      const startupIcon = L.divIcon({
-        className: 'stc__map-marker stc__marker-startup',
-        html: '<div class="stc__marker-inner"><i class="fa-solid fa-rocket"></i></div>',
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        popupAnchor: [0, -40]
-      });
-
-      const corporateIcon = L.divIcon({
-        className: 'stc__map-marker stc__marker-corporate',
-        html: '<div class="stc__marker-inner"><i class="fa-solid fa-city"></i></div>',
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        popupAnchor: [0, -40]
-      });
-
-      // Company data with locations
-      const companies = [
-        {
-          name: 'Million Miles Technologies',
-          coords: [30.6680, 73.0950],
-          icon: verifiedIcon,
-          popup: `
-            <div class="stc__popup-content">
-              <h3>Million Miles Technologies</h3>
-              <p><strong>Category:</strong> Software Development</p>
-              <p><strong>Address:</strong> Sahiwal, Punjab</p>
-              <p><strong>Services:</strong> Web Development, Mobile Apps</p>
-              <a href="jobs.html" class="stc__popup-link">View Jobs →</a>
-            </div>
-          `
-        },
-        {
-          name: 'The Tech Axe',
-          coords: [30.6650, 73.0930],
-          icon: verifiedIcon,
-          popup: `
-            <div class="stc__popup-content">
-              <h3>The Tech Axe</h3>
-              <p><strong>Category:</strong> Tech Training & Internships</p>
-              <p><strong>Address:</strong> Sahiwal City Center</p>
-              <p><strong>Services:</strong> Training, Internships</p>
-              <a href="jobs.html" class="stc__popup-link">View Jobs →</a>
-            </div>
-          `
-        },
-        {
-          name: 'Wateen',
-          coords: [30.6690, 73.0960],
-          icon: corporateIcon,
-          popup: `
-            <div class="stc__popup-content">
-              <h3>Wateen</h3>
-              <p><strong>Category:</strong> Telecommunications</p>
-              <p><strong>Address:</strong> Sahiwal Regional Office</p>
-              <p><strong>Services:</strong> Internet, Telecom Services</p>
-              <a href="jobs.html" class="stc__popup-link">View Jobs →</a>
-            </div>
-          `
-        },
-        {
-          name: 'CodeCraft Studios',
-          coords: [30.6640, 73.0920],
-          icon: startupIcon,
-          popup: `
-            <div class="stc__popup-content">
-              <h3>CodeCraft Studios</h3>
-              <p><strong>Category:</strong> Web Development</p>
-              <p><strong>Address:</strong> Sahiwal</p>
-              <p><strong>Services:</strong> Custom Websites</p>
-              <a href="jobs.html" class="stc__popup-link">View Jobs →</a>
-            </div>
-          `
-        },
-        {
-          name: 'DesignHub',
-          coords: [30.6670, 73.0940],
-          icon: startupIcon,
-          popup: `
-            <div class="stc__popup-content">
-              <h3>DesignHub</h3>
-              <p><strong>Category:</strong> UI/UX Design</p>
-              <p><strong>Address:</strong> Sahiwal</p>
-              <p><strong>Services:</strong> UI/UX, Branding</p>
-              <a href="jobs.html" class="stc__popup-link">View Jobs →</a>
-            </div>
-          `
-        }
-      ];
-
-      // Add markers to map
-      companies.forEach(company => {
-        L.marker(company.coords, { icon: company.icon })
-          .addTo(map)
-          .bindPopup(company.popup, {
-            maxWidth: 300,
-            className: 'stc__map-popup'
-          });
-      });
 
       // Company Directory Filters
       const filterButtons = document.querySelectorAll('.stc__filter-btn');
@@ -725,124 +605,6 @@
     })();
   </script>
 
-  <style>
-    /* Map specific styles */
-    #stc-companies-map {
-      height: 500px;
-      width: 100%;
-      border-radius: 16px;
-    }
-
-    .stc__map-wrapper {
-      padding: 16px;
-      background: var(--stc-white);
-    }
-
-    .stc__map-legend {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-
-    .stc__legend-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-    }
-
-    .stc__legend-marker {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-    }
-
-    .stc__marker-verified {
-      background: var(--stc-green-light);
-    }
-
-    .stc__marker-startup {
-      background: var(--stc-gold-light);
-    }
-
-    .stc__marker-corporate {
-      background: var(--stc-dark);
-    }
-
-    /* Custom marker styles */
-    .stc__map-marker .stc__marker-inner {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 18px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      border: 3px solid white;
-    }
-
-    .stc__marker-verified .stc__marker-inner {
-      background: var(--stc-green-light);
-    }
-
-    .stc__marker-startup .stc__marker-inner {
-      background: var(--stc-gold-light);
-    }
-
-    .stc__marker-corporate .stc__marker-inner {
-      background: var(--stc-dark);
-    }
-
-    /* Popup styles */
-    .stc__popup-content h3 {
-      font-size: 18px;
-      margin: 0 0 10px;
-      color: var(--stc-green-primary);
-    }
-
-    .stc__popup-content p {
-      font-size: 14px;
-      margin: 5px 0;
-      color: var(--stc-text);
-    }
-
-    .stc__popup-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 16px;
-      background: var(--stc-green-light);
-      color: white;
-      text-decoration: none;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    .leaflet-popup-content-wrapper {
-      border-radius: 12px;
-      padding: 0;
-    }
-
-    .leaflet-popup-content {
-      margin: 16px;
-    }
-
-    @media (max-width: 767px) {
-      #stc-companies-map {
-        height: 350px;
-      }
-
-      .stc__map-legend {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-      }
-    }
-  </style>
 
 </body>
 

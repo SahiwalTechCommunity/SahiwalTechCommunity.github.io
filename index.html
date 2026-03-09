@@ -222,15 +222,66 @@
               <div class="stc__form-header-icon">
                 <i class="fa-solid fa-user-plus"></i>
               </div>
-              <h3 class="stc__hero-form-title">Join Our Community</h3>
+              <h3 class="stc__hero-form-title" style="color: darkgreen;">Join Our Community</h3>
               <p class="stc__hero-form-description">Connect with 1,000+ tech professionals in Sahiwal</p>
 
-              <div class="stc__google-form-embed stc__google-form-compact">
-                <iframe
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSdF4t3NiPfO8_-vDvx5uF3YmR3XlJqK8cVkZWwZxM6QyVhRGg/viewform?embedded=true"
-                  width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0"
-                  title="Join Sahiwal Tech Community Form">Loading form...</iframe>
-              </div>
+              <form id="membershipForm" class="stc__custom-form">
+                <div class="stc__form-group">
+                  <input type="email" id="email" name="email" class="stc__form-input" required aria-label="Email"
+                    placeholder="Email *">
+                </div>
+
+                <div class="stc__form-group">
+                  <input type="text" id="name" name="name" class="stc__form-input" required aria-label="Name"
+                    placeholder="Name *">
+                </div>
+
+                <div class="stc__form-group">
+                  <input type="text" id="city" name="city" class="stc__form-input" required
+                    aria-label="City/Village of residence" placeholder="City/Village of residence *">
+                </div>
+
+                <div class="stc__form-group">
+                  <input type="tel" id="phone" name="phone" class="stc__form-input" required
+                    aria-label="Phone (WhatsApp)" placeholder="WhatsApp Number *">
+                </div>
+
+                <div class="stc__form-group">
+                  <input type="url" id="linkedin" name="linkedin" class="stc__form-input" required
+                    aria-label="LinkedIn URL" placeholder="LinkedIn URL *">
+                </div>
+
+                <div class="stc__form-group">
+                  <input type="url" id="website" name="website" class="stc__form-input" aria-label="Website / Portfolio"
+                    placeholder="Website / Portfolio URL">
+                </div>
+
+                <div class="stc__form-group full-width"
+                  style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; padding: 6px 4px;">
+                  <label class="stc__form-label" style="margin-bottom:0;">Are you currently a? <span
+                      class="stc__text-gold">*</span></label>
+                  <div class="stc__radio-group" style="margin-top:0;">
+                    <label class="stc__radio-label">
+                      <input type="radio" name="status" value="Student" required>
+                      <span class="stc__radio-custom"></span> Student
+                    </label>
+                    <label class="stc__radio-label">
+                      <input type="radio" name="status" value="Professional">
+                      <span class="stc__radio-custom"></span> Professional
+                    </label>
+                  </div>
+                </div>
+
+                <div class="stc__form-group full-width">
+                  <input type="text" id="university" name="university" class="stc__form-input" required
+                    aria-label="Last University attended" placeholder="Last University Attended * (e.g. COMSATS)">
+                </div>
+
+                <button type="submit" class="stc__btn stc__btn-primary stc__btn-glow stc__form-submit"
+                  style="width:100%; justify-content:center;">
+                  Submit Request
+                </button>
+              </form>
 
               <div class="stc__hero-form-alternative">
                 <p class="stc__alternative-text">Prefer direct access?</p>

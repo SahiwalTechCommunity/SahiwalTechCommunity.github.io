@@ -2820,10 +2820,17 @@
 
 /* Companies Hero Section */
 .stc__page-hero.stc__hero-enhanced {
-  padding: 120px 0 100px;
+  padding: 180px 0 140px;
+  /* Increased top and bottom padding for the header */
   background: linear-gradient(135deg, var(--stc-dark) 0%, var(--stc-green-primary) 100%);
   position: relative;
   overflow: hidden;
+}
+
+.stc__page-hero.stc__hero-enhanced .stc__hero-badges,
+.stc__page-hero.stc__hero-enhanced .stc__hero-cta {
+  justify-content: center;
+  /* Horizontally center buttons and badges */
 }
 
 /* Stats Section */
@@ -3210,14 +3217,16 @@
 .stc__company-cta-title {
   font-size: clamp(28px, 5vw, 42px);
   font-weight: 700;
-  color: var(--stc-white);
+  color: var(--stc-text);
+  /* Changed from white for readability */
   margin-bottom: 20px;
   font-family: var(--stc-font-heading);
 }
 
 .stc__company-cta-description {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--stc-text-light);
+  /* Changed from white for readability */
   max-width: 600px;
   margin: 0 auto 40px;
   line-height: 1.7;
@@ -3800,4 +3809,94 @@
     padding: 14px 28px;
     font-size: 16px;
   }
+}
+
+/* Custom Form Styles for Hero Section */
+.stc__hero-wrapper {
+  grid-template-columns: 1fr 580px;
+  /* slightly wider form on desktop */
+}
+
+@media (max-width: 991px) {
+  .stc__hero-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stc__custom-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 15px;
+  text-align: left;
+}
+
+@media (max-width: 575px) {
+  .stc__custom-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stc__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.stc__form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.stc__form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--stc-text);
+  margin-bottom: 4px;
+}
+
+.stc__form-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--stc-text);
+  background: var(--stc-white);
+  transition: all 0.3s ease;
+}
+
+.stc__form-input:focus {
+  outline: none;
+  border-color: var(--stc-green-primary);
+  box-shadow: 0 0 0 3px rgba(45, 158, 71, 0.1);
+}
+
+.stc__form-input::placeholder {
+  color: #8c98a4;
+}
+
+.stc__radio-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 2px;
+}
+
+.stc__radio-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--stc-text);
+  cursor: pointer;
+}
+
+.stc__radio-label input[type="radio"] {
+  accent-color: var(--stc-green-primary);
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.stc__form-submit {
+  grid-column: 1 / -1;
+  margin-top: 5px;
 }
