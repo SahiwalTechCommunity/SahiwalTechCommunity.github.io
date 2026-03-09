@@ -174,8 +174,8 @@
           <p class="stc__contact-description" style="color: var(--stc-text-light); line-height: 1.6; font-size: 15px;">
             Have a specific inquiry or partnership proposal? Send us a message and we'll get back to you.
           </p>
-          <a href="mailto:info@sahiwaltechcommunity.com" class="stc__btn stc__btn-primary"
-            style="margin-top: auto; justify-self: center;" aria-label="Email info@sahiwaltechcommunity.com">
+          <a href="mailto:techcommunitysahiwal@gmail.com" class="stc__btn stc__btn-primary"
+            style="margin-top: auto; justify-self: center;" aria-label="Email techcommunitysahiwal@gmail.com">
             <i class="fa-regular fa-envelope" aria-hidden="true"></i> Email Us
           </a>
         </div>
@@ -387,11 +387,11 @@
             </li>
             <li class="stc__location-detail">
               <i class="fa-solid fa-envelope"></i>
-              <span>info@sahiwaltechcommunity.com</span>
+              <span>techcommunitysahiwal@gmail.com</span>
             </li>
             <li class="stc__location-detail">
               <i class="fa-solid fa-globe"></i>
-              <span>sahiwaltechcommunity.com</span>
+              <span>sahiwaltechcommunity.github.io</span>
             </li>
           </ul>
         </div>
@@ -528,6 +528,87 @@
           $answer.slideDown(300);
         }
       });
+
+      // Contact Form Validation and Submission
+      const contactForm = document.getElementById('stcContactForm');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // Reset all error states
+          const formGroups = this.querySelectorAll('.stc__form-group');
+          formGroups.forEach(group => group.classList.remove('error'));
+          const errorMessages = this.querySelectorAll('.stc__error-message');
+          errorMessages.forEach(msg => {
+            msg.style.display = 'none';
+          });
+
+          let isValid = true;
+
+          // Custom validation
+          const firstName = document.getElementById('firstName');
+          const lastName = document.getElementById('lastName');
+          const email = document.getElementById('email');
+          const subject = document.getElementById('subject');
+          const message = document.getElementById('message');
+
+          const showError = (inputElement) => {
+            isValid = false;
+            const group = inputElement.closest('.stc__form-group');
+            group.classList.add('error');
+            const errorMsg = group.querySelector('.stc__error-message');
+            if (errorMsg) {
+              errorMsg.style.display = 'block';
+            }
+
+            // Remove error class after animation completes (0.4s) to allow retriggering
+            setTimeout(() => {
+              group.classList.remove('error');
+            }, 400);
+          };
+
+          if (!firstName.value.trim()) showError(firstName);
+          if (!lastName.value.trim()) showError(lastName);
+          if (!email.value.trim() || !/\S+@\S+\.\S+/.test(email.value)) showError(email);
+          if (!subject.value) showError(subject);
+          if (!message.value.trim()) showError(message);
+
+          if (isValid) {
+            // Change button state to loading
+            const submitBtn = this.querySelector('.stc__form-submit');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="margin-right: 8px;"></i> Sending...';
+            submitBtn.setAttribute('disabled', 'true');
+            submitBtn.style.opacity = '0.7';
+            submitBtn.style.cursor = 'not-allowed';
+
+            // Simulate API call
+            setTimeout(() => {
+              alert('Form submitted successfully! Thank you for reaching out to Sahiwal Tech Community.');
+              this.reset();
+
+              // Revert button state
+              submitBtn.innerHTML = originalText;
+              submitBtn.removeAttribute('disabled');
+              submitBtn.style.opacity = '1';
+              submitBtn.style.cursor = 'pointer';
+            }, 1500);
+          }
+        });
+
+        // Clear error state on input
+        const inputs = contactForm.querySelectorAll('.stc__form-input, .stc__form-select, .stc__form-textarea');
+        inputs.forEach(input => {
+          input.addEventListener('input', function () {
+            const group = this.closest('.stc__form-group');
+            const errorMsg = group.querySelector('.stc__error-message');
+            if (errorMsg) {
+              errorMsg.style.display = 'none';
+            }
+          });
+        });
+      }
 
     })(jQuery);
   </script>
