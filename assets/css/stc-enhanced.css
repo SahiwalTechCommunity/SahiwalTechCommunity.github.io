@@ -3056,6 +3056,20 @@
   text-align: center;
 }
 
+.stc__info-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.stc__info-item a:hover {
+  color: var(--stc-green-light);
+  text-decoration: underline;
+}
+
+.stc__info-map-link a {
+  font-weight: 600;
+}
+
 /* Hiring Info - Modern UI/UX */
 .stc__info-hiring {
   background: linear-gradient(135deg, rgba(45, 158, 71, 0.08) 0%, rgba(45, 158, 71, 0.15) 100%);
