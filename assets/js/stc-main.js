@@ -18,6 +18,7 @@
       this.enhancedAnimations();
       this.statCounters();
       this.intersectionObserver();
+      this.eventGallery();
     },
 
     // Preloader
@@ -174,6 +175,136 @@
           }
         });
       }
+    },
+
+    // Event image gallery lightbox (per-event Swiper carousel)
+    eventGallery: function() {
+      const grids = document.querySelectorAll('.stc__past-events-grid');
+      const lightbox = document.getElementById('stc__event-lightbox');
+
+      if (!grids.length || !lightbox || typeof Swiper === 'undefined') {
+        return;
+      }
+
+      document.querySelectorAll('.stc__past-event-card').forEach(function(card) {
+        if (!card.querySelector('.stc__past-event-zoom')) {
+          const zoom = document.createElement('span');
+          zoom.className = 'stc__past-event-zoom';
+          zoom.setAttribute('aria-hidden', 'true');
+          zoom.innerHTML = '<i class="fa-solid fa-expand"></i>';
+          card.appendChild(zoom);
+        }
+      });
+
+      const wrapper = lightbox.querySelector('.swiper-wrapper');
+      const caption = lightbox.querySelector('.stc__event-lightbox-caption');
+      const counter = lightbox.querySelector('.stc__event-lightbox-counter');
+      const prevBtn = lightbox.querySelector('.stc__event-lightbox-prev');
+      const nextBtn = lightbox.querySelector('.stc__event-lightbox-next');
+      const closeBtn = lightbox.querySelector('.stc__event-lightbox-close');
+      const backdrop = lightbox.querySelector('.stc__event-lightbox-backdrop');
+
+      let swiper = null;
+      let currentSlides = [];
+
+      function getSlidesFromGrid(grid) {
+        const slides = [];
+        grid.querySelectorAll('.stc__past-event-card').forEach(function(card) {
+          const img = card.querySelector('img');
+          const titleEl = card.querySelector('.stc__past-event-title');
+          const dateEl = card.querySelector('.stc__past-event-date');
+          if (!img) return;
+          slides.push({
+            src: img.getAttribute('src'),
+            alt: img.getAttribute('alt') || '',
+            title: titleEl ? titleEl.textContent.trim() : '',
+            date: dateEl ? dateEl.textContent.trim() : ''
+          });
+        });
+        return slides;
+      }
+
+      function updateCaption(index) {
+        const slide = currentSlides[index];
+        if (!slide) return;
+        caption.textContent = slide.title + (slide.date ? ' · ' + slide.date : '');
+        counter.textContent = (index + 1) + ' / ' + currentSlides.length;
+      }
+
+      function setNavVisible(show) {
+        prevBtn.hidden = !show;
+        nextBtn.hidden = !show;
+      }
+
+      function openLightbox(grid, startIndex) {
+        currentSlides = getSlidesFromGrid(grid);
+        if (!currentSlides.length) return;
+
+        wrapper.innerHTML = currentSlides.map(function(slide) {
+          return '<div class="swiper-slide">' +
+            '<img src="' + slide.src + '" alt="' + slide.alt.replace(/"/g, '&quot;') + '" class="stc__event-lightbox-img">' +
+            '</div>';
+        }).join('');
+
+        if (swiper) {
+          swiper.destroy(true, true);
+          swiper = null;
+        }
+
+        const hasMultiple = currentSlides.length > 1;
+        setNavVisible(hasMultiple);
+
+        swiper = new Swiper(lightbox.querySelector('.stc__event-lightbox-swiper'), {
+          initialSlide: startIndex,
+          loop: hasMultiple,
+          speed: 300,
+          keyboard: { enabled: true },
+          navigation: {
+            nextEl: nextBtn,
+            prevEl: prevBtn
+          },
+          on: {
+            slideChange: function() {
+              updateCaption(this.realIndex);
+            }
+          }
+        });
+
+        updateCaption(startIndex);
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('stc__lightbox-open');
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('stc__lightbox-open');
+      }
+
+      grids.forEach(function(grid) {
+        grid.querySelectorAll('.stc__past-event-card').forEach(function(card, index) {
+          card.setAttribute('role', 'button');
+          card.setAttribute('tabindex', '0');
+          card.addEventListener('click', function() {
+            openLightbox(grid, index);
+          });
+          card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openLightbox(grid, index);
+            }
+          });
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      backdrop.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
+          closeLightbox();
+        }
+      });
     },
 
     // Intersection Observer for scroll animations
